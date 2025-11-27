@@ -1,6 +1,6 @@
 <?php
 session_start();
-include("include/connection.php");
+include("../include/connection.php");
 
 // Check if user is logged in
 if (!isset($_SESSION['email'])) {
@@ -21,10 +21,45 @@ $email = $_SESSION['email'];
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
 </head>
 <body class="bg-gray-50">
-    <?php include("include/navbar.php"); ?>
-    <div class="flex min-h-screen pt-16">
-        <?php include("include/aside.php"); ?>
+    <!-- Navbar -->
+    <nav class="bg-red-600 text-white shadow-lg fixed top-0 w-full z-50">
+        <div class="container mx-auto flex justify-between items-center py-4 px-6">
+            <a href="dashboard.php" class="text-2xl font-bold">Blood Donation</a>
+            <ul class="flex space-x-6">
+                <li><a href="dashboard.php" class="hover:text-gray-300">Dashboard</a></li>
+                <li><a href="profile.php" class="hover:text-gray-300">Profile</a></li>
+                <li><a href="logout.php" class="hover:text-gray-300">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
 
+    <!-- Main Layout -->
+    <div class="flex pt-16">
+        <!-- Sidebar -->
+        <aside class="w-64 bg-gray-800 text-white fixed h-full left-0 overflow-y-auto">
+            <div class="p-4">
+                <h2 class="text-xl font-bold mb-4">Menu</h2>
+                <ul class="space-y-3">
+                    <li>
+                        <a href="dashboard.php" class="block px-4 py-2 rounded-lg bg-gray-700">Dashboard</a>
+                    </li>
+                    <li>
+                        <a href="profile.php" class="block px-4 py-2 rounded-lg hover:bg-gray-700 transition duration-150">Profile</a>
+                    </li>
+                    <li>
+                        <a href="request.php" class="block px-4 py-2 rounded-lg hover:bg-gray-700 transition duration-150">Request Donate</a>
+                    </li>
+                    <li>
+                        <a href="signdonor.php" class="block px-4 py-2 rounded-lg hover:bg-gray-700 transition duration-150">Sign As Donor</a>
+                    </li>
+                    <li>
+                        <a href="logout.php" class="block px-4 py-2 rounded-lg hover:bg-gray-700 transition duration-150">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
         <main class="flex-1 ml-64 p-8">
             <div class="max-w-7xl mx-auto">
                 <h1 class="text-3xl font-bold mb-8">Dashboard</h1>

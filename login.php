@@ -4,13 +4,13 @@ session_start();
 ?>
 
 <?php
-include("include/connection.php");
+include("../include/connection.php");
 if(isset($_POST['login']))
 {
 	$email = $_POST['email'];
-	$password = md5($_POST['password']);
+	$password = $_POST['password'];
 
-	$sql="select email, password from users where email='$email' and password='$password'";
+	$sql="select email, password from admin where email='$email' and password='$password'";
 			$ad=mysqli_query($con,$sql);
             if(mysqli_num_rows($ad)==1)
             {
@@ -30,7 +30,7 @@ if(isset($_POST['login']))
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Login</title>
+    <title>Admin Login</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
 <body class="bg-gray-100">
@@ -43,7 +43,7 @@ if(isset($_POST['login']))
     </nav>
     <div class="min-h-screen flex items-center justify-center">
         <div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-lg">
-            <h2 class="text-2xl font-bold mb-6 text-center text-red-600">User Login</h2>
+            <h2 class="text-2xl font-bold mb-6 text-center text-red-600">Admin Login</h2>
             <form action="login.php" method="POST" class="space-y-4">
                 <!-- Email -->
                 <div>
@@ -62,11 +62,6 @@ if(isset($_POST['login']))
                     <button type="submit" name="login" class="w-full bg-red-600 text-white px-4 py-2 rounded-lg shadow-lg font-semibold hover:bg-red-700 transition">Login</button>
                 </div>
             </form>
-
-            <div class="mt-6 text-center">
-                <p class="text-gray-600">Don't have an account? <a href="register.php" class="text-red-600 font-bold hover:underline">Register</a></p>
-                <p class="text-gray-600 mt-2">Forgot your password? <a href="forgot-password.php" class="text-red-600 font-bold hover:underline">Reset Password</a></p>
-            </div>
         </div>
     </div>
     <footer class="bg-red-600 text-white py-6">

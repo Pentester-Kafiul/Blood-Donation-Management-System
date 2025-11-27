@@ -36,7 +36,7 @@
             <h2 class="text-4xl font-bold mb-6">About Us</h2>
             <p class="text-lg max-w-3xl mx-auto mb-8">We aim to connect donors with those in need, ensuring no one suffers due to a lack of blood supply. Join us to make a difference.</p>
             <div class="flex justify-center">
-                <img src="image/human-blood-donate-and-heart-rate-on-white-background-free-vector.jpg" alt="Blood Donation" class="rounded-lg shadow-lg w-3/4 md:w-1/2">
+                <img src="../image/human-blood-donate-and-heart-rate-on-white-background-free-vector.jpg" alt="Blood Donation" class="rounded-lg shadow-lg w-3/4 md:w-1/2">
             </div>
         </div>
     </section>
